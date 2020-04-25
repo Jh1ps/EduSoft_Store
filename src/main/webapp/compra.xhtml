@@ -1,0 +1,488 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+       xmlns:h="http://xmlns.jcp.org/jsf/html"
+       xmlns:b="http://bootsfaces.net/ui"
+       xmlns:f="http://xmlns.jcp.org/jsf/core"
+       xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
+        <h:outputStylesheet library="css" name="default.css"/>
+        <title>Compra</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./resources/templates/plantilla.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $(".botonFiltro").click(function () {
+                                var catSoftware = $(this).attr('category');
+                                $(".Filtro").hide();
+                                $(".Filtro[category='" + catSoftware + "']").show();
+                            });
+                            $(".botonTodo").click(function () {
+                                $(".Filtro").show();
+                            });
+                        });
+                    </script>
+                    <b:panelGrid colSpans="2,10"
+                                 style="margin-top: 0.15%">
+                        <b:panel class="CPaneles"
+                                 style="border-color: #ffffff;">
+                            <p:panel header="Filtro">
+                                <div>
+                                    <div>
+                                        <label for="filtro">
+                                        <input class="botonTodo" type="radio" category="todo" value="filtro" name="filtro"/>
+                                            Todo
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="filtro"> 
+                                        <input class="botonFiltro" type="radio" category="ofimatica" value="filtro" name="filtro"/>
+                                            Ofimática
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="filtro">
+                                        <input class="botonFiltro" type="radio" category="desarrollador" name="filtro" value="filtro"/>
+                                            Desarrollador
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="filtro">
+                                        <input class="botonFiltro" type="radio" category="basededatos" name="filtro" value="filtro"/>
+                                            Bases de datos
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="filtro">
+                                        <input class="botonFiltro" type="radio" category="disenografico" name="filtro" value="filtro"/>
+                                            Diseño gráfico
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input class="botonFiltro" type="radio" category="redes" name="filtro" value="filtro"/>
+                                        <label>
+                                            Redes
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="filtro">
+                                        <input class="botonFiltro" type="radio" category="idiomas" name="filtro" value="filtro"/>
+                                            Idiomas
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="filtro">
+                                        <input class="botonFiltro" type="radio" category="compresion" name="filtro" value="filtro"/>
+                                            Compresión
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <label for="filtro">
+                                        <input class="botonFiltro" type="radio" category="estadistica" name="filtro" value="filtro"/>
+                                            Estadística
+                                        </label>
+                                    </div>
+                                </div>
+                            <br/>
+                            <b:panel look="warning" collapsible="false" style="text-align: center">
+                                    <label>Descarga y reviza nuestro catálogo con las específicaciones de los programas que te ofrecemos</label><br/>
+                                    <b:commandButton look="warning" value="Catálogo" action="#{jasperController.verPdf()}"/>
+                                </b:panel>
+                            </p:panel>
+                        </b:panel>
+                        <b:panel title="Descarga" icon-awesome="download" collapsible="false" look="info">
+                            <div class="Filtro" category="ofimatica">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 value=""
+                                                 name="office.jpg"
+                                                 style="height: 200px;"/>
+                                        <h4>Microsoft Office</h4>
+                                        <h5>Microsoft Office es una suite ofimática que abarca el mercado completo en Internet e interrelaciona aplicaciones de escritorio, servidores y servicios para los sistemas operativos...</h5>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="Microsoft Office" styleClass="SeudoModalMO">
+                                                <f:facet name="footer">
+                                                    <p align="left">Microsoft Office ofrece una serie de herramientas de gran utilidad para el uso y manejo de los estudiantes. Además, las versiones de esta suite han abarcado hasta dispositivos móviles, existiendo versiones para tablets, smartphones y computadoras personales.
+                                                        Cada estudiante utiliza la herramienta que considere necesaria para realizar sus actividades, encontrándose así una variedad muy amplia de procesos en cada una de las funciones, las cuales se van actualizando y ampliando conforme las necesidades de los usuarios.
+                                                        En Microsoft Office se pueden realizar las funciones que abarcan:<br/>
+                                                        Microsoft Access (programa para bases de datos)<br/>Microsoft Excel (hoja de cálculo)<br/>Microsoft OneNote (capturar, organizar, reutilizar y sobretodo compartir notas para equipos portátiles, desktop y tablet)<br/>Microsoft Outlook (correo electrónico)
+                                                        Microsoft PowerPoint (presentaciones en diapositivas)<br/>Microsoft Project (gestor de proyectos)<br/>Microsoft Publisher (editor de publicaciones)<br/>Microsoft Visio (editor de diagramas)<br/>Microsoft Word (procesador de texto)</p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalMO').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="desarrollador">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="netbeans.jpg"
+                                                 style="height: 200px;"/>
+                                        <h4>Netbeans</h4>
+                                        <h5>NetBeans es un entorno de desarrollo integrado libre, hecho principalmente para el lenguaje de programación Java. Existe además un número importante de módulos para extenderlo...</h5>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="NetBeans" styleClass="SeudoModalN">
+                                                <f:facet name="footer">
+                                                    <p align="left">NetBeans es un programa que sirve como IDE (un entorno de desarrollo integrado) que nos permite programar en diversos lenguajes.<br/>
+                                                        El desarrollo de software se ha diversificado mucho basándonos en la cantidad de lenguajes que existen para la programación. Sin embargo, hay lenguajes que van imponiéndose como estándares, entre ellos tenemos a Java, PHP, HTML, C++, C#, Ruby.<br/>
+                                                        El problema que se presenta a la mayoría de los programadores es contar con un entorno de desarrollo que sea completo, eficaz, fácil de usar y sea en lo posible gratuito. Todos esos requerimientos los podemos encontrar en NetBeans.<br/>
+                                                        NetBeans es ideal para trabajar con el lenguaje de desarrollo JAVA (y todos sus  derivados), así como también nos ofrece un excelente entorno para programar en PHP. También se puede descargar una vez instalado NetBeans, los complementos
+                                                        para programar en C++. La IDE deNetBeans es perfecta. Tiene un excelente balance entre una interfaz con múltiples opciones y el editor puede autocompletar nuestro código.</p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalN').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="basededatos">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="sqlsm.png"
+                                                 style="height: 200px;"/>
+                                        <d><h4>SQL Server Management Studio</h4>
+                                            <h5>Es una aplicación de software que se utiliza para configurar y administrar todos los componentes dentro de Microsoft SQL Server...</h5></d>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="SQL Server Management Studio" styleClass="SeudoModalSQL">
+                                                <f:facet name="footer">
+                                                    <p align="left">SSMS es la herramienta principal para la gestión de bases de datos SQL Server. Se basa en el shell de Visual Studio utilizado para proyectos de desarrollo de software, y brinda las siguientes características:<br/>
+                                                        Se trata de un panel desde la cual se puede conectar a instancias de SQL Server y administrar los objetos que contiene. De forma predeterminada, cuando se abre SSMS se le pedirá que se conecte a una instancia de SQL Server, y este se mostrará en el Explorador de objetos.<br/>
+                                                        Puede utilizar proyectos y soluciones para mantener los scripts relacionados, conexiones y otros documentos juntos. Esto puede hacer que sea más fácil hacer un seguimiento de todos scripts necesarios para crear y administrar una solución de base de datos.<br/>
+                                                        SSMS incluye una interfaz de informes extensible que se puede utilizar para ver información de configuración y estado detallado acerca de las instancias de SQL Server, bases de datos y otros objetos.<br/>
+                                                        Puede administrar servidores de base de datos y objetos utilizando interfaces gráficas (normalmente abiertos desde el Explorador de objetos), o puede ingresar y ejecutar instrucciones de Transact-SQL en el panel editor de código. El uso de código de Transact-SQL para realizar<br/>
+                                                        tareas de administración le permite guardar las tareas como scripts, que se pueden volver a ejecutarse en un momento posterior o planificado para ejecutarse de forma automática.</p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalSQL').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="disenografico">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="autocad.jpg"
+                                                 style="height: 200px;"/>
+                                        <d><h4>AutoCAD</h4>
+                                            <h5>Es un software de diseño asistido por ordenador utilizado para dibujo 2D y modelado 3D. Actualmente es desarrollado por la empresa Autodesk...</h5></d>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="AutoCAD" styleClass="SeudoModalAC">
+                                                <f:facet name="footer">
+                                                    <p align="left">Software del tipo CAD (Computer Aided Design) que en castellano significa diseño asistido por computadora, y que fue creado por una empresa norteamericana especializada en este rubro llamada Autodesk.<br/>
+                                                        Gracias a sus avanzadas y convenientes características, en la actualidad AutoCAD es una pieza fundamental en cualquier estudio de diseño arquitectónico o ingeniería industrial, y es utilizado habitualmente para el desarrollo y elaboración de complejas piezas de dibujo técnico en
+                                                        dos dimensiones (2D) y para creación de modelos tridimensionales (3D).<br/>
+                                                        AutoCAD trabaja mediante la utilización de imágenes de tipo vectorial, pero también es capaz de importar archivos de otros tipos como mapas de bits, lo que le permite al profesional lograr un mejor dinamismo y profundizar en su trabajo.<br/>
+                                                        Este tipo de software es utilizado, entre otras tareas, en la realización de prototipos para simulación y cálculo sobre dibujos virtuales las cargas y esfuerzos que determinada pieza va a sufrir en su trabajo.<br/></p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalAC').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="ofimatica">
+                                <b:column medium-screen="3">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="foxitpdf.png"
+                                                 style="height: 200px;"/>
+                                        <d><h4>Foxit PhantomPDF</h4>
+                                            <h5>Es un lector PDF multilingüe. Este software es notable por su corto tiempo para cargar y el tamaño pequeño de sus archivos. Ha sido favorablemente comparado con Adobe Reader...</h5></d>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="Foxit PhantomPDF" styleClass="SeudoModalFP">
+                                                <f:facet name="footer">
+                                                    <p align="left">Los documentos evolucionan con el tiempo y deben actualizarse. PhantomPDF permite que los creadores editen PDF y actualicen los documentos ellos mismos.<br/>
+                                                        Es habitual crear documentos nuevos a partir de las páginas de documentos existentes, PhantomPDF proporciona la capacidad de editar PDF para poder organizarlos y manipularlos rápidamente con el fin de respaldar los flujos de trabajo.<br/>
+                                                        Editor de PDF certificado que ofrece los beneficios de la automatización de grandes volúmenes de tareas repetitivas proporcionados por la automatización robótica de procesos (RPA) para el procesamiento de PDF.<br/></p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalFP').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="redes">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="Ptracer.png"
+                                                 style="height: 200px;"/>
+                                        <h4>Packet Tracer</h4>
+                                        <h5>Es un programa de simulación de redes que permite a los estudiantes experimentar con el comportamiento de la red y resolver preguntas del tipo...</h5>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="Packet Tracer" styleClass="SeudoModalPT">
+                                                <f:facet name="footer">
+                                                    <p align="left">Cisco desarrolló Packet Tracer para ayudar a que los alumnos de Networking Academy tengan la mejor experiencia de aprendizaje posible y, a la vez, adquieran habilidades prácticas en tecnología de redes.
+                                                        Packet Tracer es una potente plataforma simulación de redes que estimula a los alumnos a experimentar con el comportamiento de las redes y a formular preguntas sobre situaciones hipotéticas. Funciona como complemento de los equipos físicos en el salón de clases: 
+                                                        los estudiantes pueden crear una red con un número casi ilimitado de dispositivos, lo que estimula la práctica y la detección y solución de problemas.<br/>
+                                                        Junto con los materiales didácticos diseñados con tal fin, es la principal herramienta de trabajo para pruebas y simulación de prácticas en los cursos de formación de Cisco System <a href="http://cisco.netacad.net">(http://cisco.netacad.net)</a>.<br/> Para su utilización
+                                                        se requiere la aceptación de la licencia de usuario y la autorización del propietario a través de las entidades denominadas “academias” que están autorizadas para la impartición de los citados cursos.<br/>
+                                                        El modo de operación con Packet Tracer es muy sencillo ya que se trata de un programa muy intuitivo.<br/></p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalPT').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="desarrollador">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="axure.png"
+                                                 style="height: 200px;"/>
+                                        <h4>Axure</h4>
+                                        <h5>Axure RP Pro / Team es una herramienta de software de enmarcado, creación rápida de prototipos, documentación y especificaciones dirigida a aplicaciones web, móviles y de escritorio....</h5>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="Axure" styleClass="SeudoModalAX">
+                                                <f:facet name="footer">
+                                                    <p align="left">Axure RP admite la creación de prototipos de aplicaciones de Internet enriquecidas mediante el mapeo de los comportamientos de interfaz deseados (como mostrar u ocultar un elemento) en respuesta a acciones como clics del mouse o gestos táctiles.
+                                                        Axure RP genera sitios web HTML para la vista previa y la colaboración del equipo, así como documentos de Microsoft Word como salida para la documentación de producción.<br/>
+                                                        Axure RP también puede conectarse a otras herramientas y servicios como Slack y Microsoft Teams para colaborar. Axure RP también puede ajustarse automáticamente y moverse sin problemas de macOS a Windows. 
+                                                        Por seguridad, los prototipos se pueden enviar con protecciones de contraseña para garantizar la divulgación completa.<br/>
+                                                        Además, cuenta con funciones para anotar los widgets y la definición de las interacciones como la vinculación, la vinculación condicional, simulando controles de pestañas, mostrar / ocultar elementos, etc.<br/>
+                                                        Otra de las características a resaltar de Axure es la posibilidad de crear masters o documentos maestros, los cuales son muy útiles pues son reutilizables en todas las interfaces que se diseñen, y los cambios
+                                                        que se apliquen a estos se ven reflejados en todas las páginas en las que se estén utilizando. Son ideales para el diseño de headers, footers, templateso módulos. Otra de sus fortalezas tiene que ver con los 
+                                                        procesos de documentación. El arquitecto de información puede exportar el prototipo en HTML (ideal para documentar funcionamiento y para realizar pruebas de usuario), o en un documento Word que recoge, además 
+                                                        de las interfaces diseñadas, todas las anotaciones que se hagan sobre el funcionamiento de cada página, módulo o componente.<br/></p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalAX').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="idiomas">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="duolingo.jpg"
+                                                 style="height: 200px;"/>
+                                        <d><h4>Duolingo</h4>
+                                            <h5>Duolingo es proyecto social destinado al aprendizaje gratuito de idiomas y a la certificación del nivel de inglés...</h5></d>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="Duolingo" styleClass="SeudoModalDuo">
+                                                <f:facet name="footer">
+                                                    <p align="left">La principal característica didáctica es la practicidad, no es necesaria la lectura completa de textos de gramática para completar el curso en ningún idioma, uno puede llegar a entender el significado del mayor número de oraciones en el curso
+                                                        intuitivamente, solo con las imágenes, la pestaña de traducción y los errores que el programa le corrige.<br/> Las oraciones que resulten complicadas para alguien son respondidas por la comunidad, así se propicia el aprendizaje a través de la duda.
+                                                        Ninguna palabra es aprendida sin haber sido escuchada. Duolingo sigue el modelo computacional 1 a 1, es decir, que la máquina enseña constantemente al alumno y se adecúa a este, método que se perfecciona día a día con los datos recogidos por 
+                                                        el aprendizaje de cada usuario que ya tomó el curso.<br/>
+                                                        Las lecciones de Duolingo se adaptan a tu estilo de aprendizaje. Los ejercicios están diseñados a tu medida para ayudarte a aprender y repasar el vocabulario de forma efectiva.<br/>
+                                                        Puedes ver tus respuestas correctas al instante. Cuando fallas un ejercicio, te mostrara cómo mejorar rápidamente.s<br/>
+                                                        Gana monedas virtuales, desbloquea nuevos niveles y ve tu nivel de fluidez subir mientras aprendes nuevas palabras, frases y gramática.<br/></p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalDuo').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="desarrollador">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="atom.jpeg"
+                                                 style="height: 200px;"/>
+                                        <d><h4>Atom</h4>
+                                            <h5>Editor de código fuente de código abierto para macOS, Linux, y Windows​ con soporte para múltiples plug-in y control de versiones Git integrado, desarrollado por GitHub...</h5></d>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="Atom" styleClass="SeudoModalAtom">
+                                                <f:facet name="footer">
+                                                    <p align="left">Creado en colaboración con Facebook, los paquetes que componen Atom IDE han sido publicados como Open Source (licencia BSD o MIT), incluyendo como características un autocompletado más inteligente y posibilidades de
+                                                        navegación de código adicionales como una vista de esquema, poder ir a la definición, encontrar todas las referencias, funciones para mostrar informaci<br/>
+                                                        Atom IDE soporta desde su lanzamiento inicial tecnologías tan populares como TypeScript y JavaScript, Flow, C#, Java y PHP, por lo que ya podría satisfacer las necesidades de una gran cantidad de programadores. Eso sí, para poder usar correctamente de
+                                                        estas posibilidades adicionales se tiene que instalar antes el paquete correspondiente a la interfaz gráfica.<br/></p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalAtom').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="ofimatica">
+                                <b:column medium-screen="3">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="evernote.jpg"
+                                                 style="height: 200px;"/>
+                                        <d><h4>Evernote</h4>
+                                            <h5>Evernote es una aplicación informática cuyo objetivo es la organización de información personal mediante el archivo de notas...</h5></d>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="Evernote" styleClass="SeudoModalEN">
+                                                <f:facet name="footer">
+                                                    <p align="left">Evernote está disponible en las principales plataformas móviles, como son iOS, Android, Windows Phone 7 y BlackBerry. También cuenta con versiones nativas para Windows y Mac, además de la versión web de Evernote.
+                                                        Todas las notas, fotos, documentos, archivos de audio y páginas web guardadas en una de las versiones de Evernote se sincronizan automáticamente en las otras plataformas que utilice el usuario.<br/>
+                                                        Entre sus utilidades podrás tomar notas en tu PC y abrirlas desde el móvil. Editarlas sobre la marcha. Clasificar, buscar y compartir con alumnos y profesores además de organizar y compartir información con esta.
+                                                        Algunos de los usos que los autores de Evernote sugieren a los profesores van desde tomar fotos de la pizarra hasta capturar páginas web para trabajos de investigación. Las posibilidades son infinitas.<br/>
+                                                        Esta herramienta te permitirá ganar el tiempo que se pierde habitualmente buscando notas, lecturas pendientes, ese mail súper importante, etc.<br/>
+                                                        Es una herramienta web que facilita la flexibilidad tan necesaria en las nuevas formas de trabajo, en cualquier lugar y en cualquier sitio puedes tener tu oficina.<br/>
+                                                        Es como una caja donde puedes ir guardando todas las notas mentales (o de post-its), incluso de voz, o imágenes, por ejemplo:<br/>
+                                                        Horarios.<br/>
+                                                        Documentos para leer más tarde.<br/>
+                                                        Reuniones del trabajo.<br/>
+                                                        Notas del proyecto que estás desarrollando.<br/>
+                                                        Ideas útiles que se te acaban de ocurrir.<br/>
+                                                        Emails para leer más tarde.<br/>
+                                                        Enlaces interesantes que estás viendo en el navegador.<br/>
+                                                        Imágenes para documentar algún tema específico.<br/>
+                                                        Libros interesantes que te gustaría conocer.<br/></p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalEN').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="compresion">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px;">
+                                        <b:image library="images"
+                                                 name="winrar.jpg"
+                                                 style="height: 200px;"/>
+                                        <d><h4>Winrar</h4>
+                                            <h5>WinRAR es la herramienta que necesita para abrir, comprimir y descomprimir descargas y ficheros adjuntos comprimidos....</h5></d>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="Winrar" styleClass="SeudoModalW">
+                                                <f:facet name="footer">
+                                                    <p align="left">WinRAR sirve para acceder al contenido de archivos comprimidos y también para poder crear este tipo de archivos.<br/>
+                                                        Si tiene WinRAR instalado los archivos comprimidos se muestran con el icono de los tres libritos. WinRAR puede crear archivos comprimidos del tipo .rar y .zip y puede descomprimir archivos comprimidos
+                                                        .rar, .zip, .arj, .7z, .lzh, .ace, .tar, .tar.gz, .bz2, .uue, .cab, .jar y .iso<br/>
+                                                        Posee una tasa de compresión mejor que la que brinda ZIP y también permite generar archivos en varios ficheros y cifrar el contenido de los archivos hasta AES-128 desde la versión 3.20. Es muy popular, sobre todo en el entorno de Microsoft Windows.<br/>
+                                                        Se trata de un producto de pago aunque se puede utilizar de manera gratuita durante 40 días. Una vez termine este período de prueba, cada vez que se utilice la aplicación se muestra un mensaje recordando que se ha de comprar la licencia, aunque se puede seguir utilizando
+                                                        de manera privada. En caso de optar por la compra, se podrá utilizar para siempre sin necesidad de renovar ninguna suscripción.</p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalW').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                            <div class="Filtro" category="estadistica">
+                                <b:column medium-screen="3"
+                                          styleClass="CColumna">
+                                    <b:thumbnail class="doc"
+                                                 style="height: 400px">
+                                        <b:image library="images"
+                                                 name="stata.png"
+                                                 style="height: 200px;"/>
+                                        <d><h4>Stata</h4>
+                                            <h5>Stata es un paquete de software estadístico utilizado principalmente por instituciones académicas y empresariales dedicadas a la investigación, especialmente en economía...</h5></d>
+                                        <div class="botones">
+                                            <b:modal class="pop-up" title="Stata" styleClass="SeudoModalStt">
+                                                <f:facet name="footer">
+                                                    <p align="left">Stata permite, entre otras funcionalidades, la gestión de datos, el análisis estadístico, el trazado de gráficos y las simulaciones. Tiene la ventaja de ejecutar los análisis y tareas mediante pestañas desplegables
+                                                        o mediante comandos, que lo hace muy amigable. Además, permite el análisis estadístico de tipo frecuentista y de tipo bayesiano.<br/>
+                                                        El tipo de archivos que utiliza son<br/>
+                                                        <ul style="text-align: left"><li>dta archivos de datos</li>
+                                                            <li>do archivos de comandos</li>
+                                                            <li>ado programas</li>
+                                                            <li>hlp archivos de ayuda</li>
+                                                            <li>gph gráficos</li>
+                                                            <li>dct archivos diccionarios</li>
+                                                            <li>smcl archivos log</li></ul></p>
+                                                    <p align="left">Stata es un paquete de software completo e integrado que satisface todas sus necesidades
+                                                        frente a la ciencia de datos: manejo, visualización, estadísticas e informes automatizados.<br/></p>
+                                                    <b:button value="Close" dismiss="modal" />
+                                                    <b:button value="Ok" look="primary" dismiss="modal" />
+                                                </f:facet>
+                                            </b:modal>
+                                            <b:button value="Leer más" look="info" size="sm"
+                                                      onclick="$('.SeudoModalStt').modal()"/>&nbsp;
+                                            <b:commandButton value="Descargar" look="success" size="sm" 
+                                                             action="#{descargaController.respaldo()}"/>
+                                        </div>
+                                    </b:thumbnail>
+                                </b:column>
+                            </div>
+                        </b:panel>
+                    </b:panelGrid>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+
+

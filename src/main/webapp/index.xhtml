@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
+        <title>desarrolloWebI_Proyecto</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./resources/templates/plantillaIngreso.xhtml">
+            <ui:define name="content">
+                <div id="div-img">
+                    <b:navBar id="nav-img">
+                        <h4>
+                            Bienvenido a <b style="color:#82bbce">EduSoft</b>
+                        </h4>
+                        <h5>
+                            La página que te brinda las<br/>
+                            herramientas para que podas<br/>
+                            llevar tu conocimiento al<br/>
+                            siguiente nivel
+                        </h5>
+                    </b:navBar>
+                </div>
+                <div id="listaIntro"
+                     style="font-size: 24px;">
+                    <ul><li><b:iconAwesome class="icon" value="fa-desktop" solid="false" size="3x"/><br/><h4>Aprende con las  mejores y 
+                            más usadas aplicaciones hoy en día en las diferentes areás de estudio</h4></li>
+                        <li><b:iconAwesome class="icon" value="fa-bar-chart" solid="false" size="3x"/><br/><h4>Lleva un control de tus 
+                            actividades en la tienda por medio de listas y gráficos</h4></li>
+                        <li><b:iconAwesome class="icon" value="fa-book" solid="false" size="3x"/><br/><h4>Elíge entre nuestra
+                                    galería de Ebooks educativos que te ayudaran a alcanzar tus metas</h4></li>
+                    </ul>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Perfil</title>
+
+    </h:head>
+    <h:body >
+        <ui:composition template="./resources/templates/plantilla.xhtml">
+            <ui:define name="content" >
+                <b:container styleClass="CPerfil" fluid="true">
+                    <b:panel styleClass="PPerfil" style="border-radius: 25px;">
+                        <b:form>
+                            <b:row>
+                                    <b:column medium-screen="12"> 
+                                        <b:inputTextarea rows="9" value="#{respaldoGestion.tiraJson}"/>
+                                    </b:column>
+                                </b:row>
+                            <b:column>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonCompra('compra')}"
+                                             value="Compras"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonDatoPago('datopago')}"
+                                             value="Datos de pagos"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonFuente('fuente')}"
+                                             value="Fuentes"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonFuenteEbook('fuenteebook')}"
+                                             value="Fuentes de libros"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonFuenteSoftware('fuentesoftware')}"
+                                             value="Fuentes de software"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonInstitucion('institucion')}"
+                                             value="Institución"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            </b:column>
+                            <row>
+                                <b:column>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonPersona('persona')}"
+                                             value="Personas"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonProdebook('prodebook')}"
+                                             value="Productos Ebook"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonProdsoftware('prodsoftware')}"
+                                             value="Productos Software"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonTransaccion('transaccion')}"
+                                             value="Transacción"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            <b:commandButton look="info"
+                                             onclick="ajax:respaldoGestion.jsonUsuario('usuario')}"
+                                             value="Usuario"
+                                             styleClass="Rbutton"
+                                             update="@form"/>
+                            </b:column>
+                            </row>
+                            <b:column>
+                            <b:commandButton look="warning"
+                                             action="#{respaldoController.respaldo()}"
+                                             value="Respaldo"
+                                             styleClass="Rbutton"/>
+                            </b:column>
+                        </b:form>
+                    </b:panel>
+                </b:container>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

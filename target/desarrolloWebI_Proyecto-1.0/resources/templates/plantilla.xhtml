@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
+        <h:outputStylesheet library="css" name="default.css"/>
+        <title>EduSoft</title>
+    </h:head>
+    <h:body  id="intro">
+        <ui:insert name="top">
+            <b:navBar fluid="true"
+                      style="border: transparent;">
+                <a href="compra.xhtml">
+                    <b:image id="Image"
+                             library="images"
+                             name="Edusoft.PNG"
+                             style="height: 60px;"/>
+                </a>
+                <b:navbarLinks pull="right" 
+                               style-class="hidden-xs">
+                    <b:navLink class="enlaces"
+                               value="Software"
+                               style="color:white"
+                               href="compra.xhtml">
+                    </b:navLink>
+                    <b:navLink class="enlaces"
+                               value="Historial"
+                               style="color:white">
+                    </b:navLink>
+                    <b:navLink class="enlaces"
+                               value="Ebooks"
+                               style="color:white">
+                    </b:navLink>
+                    <b:dropMenu id="cerrar"
+                                value="#{personaController.nombre}"
+                                style="color:white"
+                                icon-awesome="user"
+                                icon-align="right">
+                        <b:navLink value="Cerrar"
+                                   icon-awesome="fa-cog"
+                                   href="index.xhtml"/>
+                        <b:inputText type="hidden" value="#{usuario.pw=exit}"/>
+                        <b:inputText type="hidden" value="#{usuario.correo=exit}"/>
+                        <b:navLink value="Perfil"
+                                   href="perfil.xhtml"/>
+                    </b:dropMenu>
+                </b:navbarLinks>
+            </b:navBar>
+        </ui:insert>
+        <div>
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+        <div>
+            <ui:insert name="myfooter">
+                <b:navBar fluid="true"
+                      style="border: transparent; background-color: #80a2db; text-align: right">
+                    <h:form>
+                        <p:commandLink id="respaldo" action="#{usuarioController.verifica()}">
+                                <h:outputText value="Respaldo" style="color:white"/>
+                            </p:commandLink>
+                        </h:form>
+            </b:navBar>
+            </ui:insert>
+        </div>
+    </h:body>
+</html>

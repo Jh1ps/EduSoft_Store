@@ -1,0 +1,126 @@
+top {
+    position: relative;
+    background-color: #036fab;
+    color: white;
+    margin: 0px 0px 0px 0px;
+    background-size: 0px
+}
+
+.navbar:not(#nav-img){
+    font-size: 16px;
+    margin-bottom: -2px;
+    padding: 10px;
+    background: linear-gradient(to right, rgba(46, 27, 161, 0.7), rgba(29, 210, 177, 0.5) 100%);-->
+    border: 0px solid black;
+}
+
+.navbar form{
+    padding-top: 20px;
+}
+
+.enlaces, #cerrar{
+    font-weight : bold;
+    margin-top: 20px;
+    margin-right: 5px;
+}
+
+.enlaces:hover, #cerrar:hover{
+    font-weight : bold;
+    text-decoration: underline;
+    font-size: 18px;
+}
+
+#nav-img{
+    -moz-background-size:auto auto !important;
+    background: rgba(17,17,17,1);
+    background: -moz-linear-gradient(left, rgba(17,17,17,1) 44%, rgba(17,17,17,0.81) 53%, rgba(17,17,17,0.56) 65%, rgba(28,28,28,0.5) 68%, rgba(43,43,43,0.47) 72%, rgba(71,71,71,0.36) 79%, rgba(102,102,102,0.25) 85%, rgba(255,255,255,0) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(44%, rgba(17,17,17,1)), color-stop(53%, rgba(17,17,17,0.81)), color-stop(65%, rgba(17,17,17,0.56)), color-stop(68%, rgba(28,28,28,0.5)), color-stop(72%, rgba(43,43,43,0.47)), color-stop(79%, rgba(71,71,71,0.36)), color-stop(85%, rgba(102,102,102,0.25)), color-stop(100%, rgba(255,255,255,0)));
+    background: -webkit-linear-gradient(left, rgba(17,17,17,1) 44%, rgba(17,17,17,0.81) 53%, rgba(17,17,17,0.56) 65%, rgba(28,28,28,0.5) 68%, rgba(43,43,43,0.47) 72%, rgba(71,71,71,0.36) 79%, rgba(102,102,102,0.25) 85%, rgba(255,255,255,0) 100%);
+    background: -o-linear-gradient(left, rgba(17,17,17,1) 44%, rgba(17,17,17,0.81) 53%, rgba(17,17,17,0.56) 65%, rgba(28,28,28,0.5) 68%, rgba(43,43,43,0.47) 72%, rgba(71,71,71,0.36) 79%, rgba(102,102,102,0.25) 85%, rgba(255,255,255,0) 100%);
+    background: -ms-linear-gradient(left, rgba(17,17,17,1) 44%, rgba(17,17,17,0.81) 53%, rgba(17,17,17,0.56) 65%, rgba(28,28,28,0.5) 68%, rgba(43,43,43,0.47) 72%, rgba(71,71,71,0.36) 79%, rgba(102,102,102,0.25) 85%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(to right, rgba(17,17,17,1) 44%, rgba(17,17,17,0.81) 53%, rgba(17,17,17,0.56) 65%, rgba(28,28,28,0.5) 68%, rgba(43,43,43,0.47) 72%, rgba(71,71,71,0.36) 79%, rgba(102,102,102,0.25) 85%, rgba(255,255,255,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#111111', endColorstr='#ffffff', GradientType=1 );
+    background-attachment:scroll !important;
+    background-color:transparent !important;
+    background-position:bottom center !important;
+    background-size: auto auto !important;
+    background-repeat:no-repeat !important;
+    position:relative;
+    height: 350px;
+    content: '';
+    border-color: transparent;
+}
+
+#div-img:not(#nav-img){
+    background-position-x: 618px;
+    background-image: url(https://elearningindustry.com/wp-content/uploads/2017/03/what-you-need-know-about-educational-software.jpg); 
+    background-repeat: no-repeat;
+    height: 349px;
+    background-position: right;
+}
+
+#nav-img h4{
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color:white;
+    padding-top: 95px;
+}
+
+#nav-img h5{
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+    color:white;
+    padding-top: 10px;
+}
+
+#listaIntro ul li{
+    margin-top: 55px;
+    width: 250px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 20px;
+}
+
+#listaIntro{
+    text-align: center;
+}
+
+.doc h5, .doc h4{
+    text-align: center;
+    font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+}
+
+.botones{
+    position: absolute;
+    bottom: 0;
+    margin-left: 50px;
+    margin-bottom: 30px;
+}
+
+.CPerfil{
+    
+    height: 800px;
+    background: linear-gradient(rgba(255,255,255,.0), rgba(255,255,255,.4)), url("./images/landscape.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+}
+
+.PPerfil{
+    margin-top: 150px;
+    padding: 20px;
+    text-align: center;
+}
+
+.columnas{
+    font-size: 115%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    text-align: center;
+}
+
+.PLabel{
+    font-size: 100%;
+}
+
+.Rbutton{
+    margin: 10px;
+}

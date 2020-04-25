@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Perfil</title>
+
+    </h:head>
+    <h:body >
+        <ui:composition template="./resources/templates/plantilla.xhtml">
+            <ui:define name="content" >
+                <b:container styleClass="CPerfil" fluid="true">
+                    <b:panel styleClass="PPerfil" style="border-radius: 25px;">
+                        <h:form id="editaPersonaForm">
+                            <b:row class="Filas">
+                                <b:column class="columnas" medium-screen="4">
+                                    <p:outputLabel styleClass="PLabel"
+                                                   value="Nombre"
+                                                   for="nombre"/>
+                                </b:column>
+                                <b:column medium-screen="7">
+                                    <p:inplace>
+                                        <p:inputText id="nombre" 
+                                                     disabled="false"
+                                                     required="true"
+                                                     value="#{personaController.nombre}"/>
+                                    </p:inplace>
+                                </b:column>
+                                <b:column medium-screen="7" style-class="message">
+                                    <b:message for="nombre"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="4" class="columnas">
+                                    <p:outputLabel value="Apellido1"
+                                                   styleClass="PLabel"
+                                                   for="apellido1"/>
+                                </b:column>
+                                <b:column medium-screen="7">
+                                    <p:inplace>
+                                        <p:inputText  id="apellido1"
+                                                      disabled="false"
+                                                      required="true"
+                                                      value="#{personaController.apellido1}"/>
+                                    </p:inplace>
+                                </b:column>
+                                <b:column medium-screen="7" style-class="message">
+                                    <b:message for="apellido1"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="4" class="columnas">
+                                    <p:outputLabel value="Apellido2"
+                                                   styleClass="PLabel"
+                                                   for="apellido2"/>
+                                </b:column>
+                                <b:column medium-screen="7">
+                                    <p:inplace>
+                                        <p:inputText id="apellido2" 
+                                                     required="true"
+                                                     value="#{personaController.apellido2}"
+                                                     disabled="false"/>
+                                    </p:inplace>
+                                </b:column>
+                                <b:column medium-screen="7" style-class="message">
+                                    <b:message for="apellido2"/>
+                                </b:column>
+                            </b:row>                                
+                            <b:row>
+                                <b:column medium-screen="4" class="columnas">
+                                    <p:outputLabel value="Correo"
+                                                   styleClass="PLabel"
+                                                   for="correo"/>
+                                </b:column>
+                                <b:column medium-screen="7">
+                                    <p:inplace>
+                                        <p:inputText id="correo"  
+                                                     required="true"
+                                                     value="#{personaController.correo}"
+                                                     disabled="false"/>
+                                    </p:inplace>
+                                </b:column>
+                                <b:column medium-screen="7" style-class="message">
+                                    <b:message for="correo"/>
+                                </b:column>
+                            </b:row>                                
+                            <b:row>
+                                <b:column medium-screen="4" class="columnas">
+                                    <p:outputLabel value="Teléfono"
+                                                   styleClass="PLabel"
+                                                   for="telefono"/>
+                                </b:column>
+                                <b:column medium-screen="7">
+                                    <p:inplace>
+                                        <p:inputText  id="telefono" 
+                                                      required="true"
+                                                      value="#{personaController.telefono}" 
+                                                      disabled="false"/>
+                                    </p:inplace>
+                                </b:column>
+                                <b:column medium-screen="7" style-class="message">
+                                    <b:message for="telefono"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:column medium-screen="4" class="columnas">
+                                    <p:outputLabel value="Dirección"
+                                                   styleClass="PLabel"
+                                                   for="direccion"/>
+                                </b:column>
+                                <b:column medium-screen="7">
+                                    <p:inplace>
+                                        <p:inputText id="direccion" 
+                                                     required="true"
+                                                     value="#{personaController.direccion}"
+                                                     disabled="false"/>
+                                    </p:inplace>
+                                </b:column>
+                                <b:column medium-screen="7" style-class="message">
+                                    <b:message for="direccion"/>
+                                </b:column>
+                            </b:row>
+                            <b:row>
+                                <b:form>
+                                    <b:commandButton value="Modificar"
+                                                     action="#{personaController.modifica()}"
+                                                     look="info"
+                                                     style="margin-top: 30px;"/>
+                                </b:form>
+                            </b:row>
+                        </h:form>
+                    </b:panel>
+                </b:container>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
